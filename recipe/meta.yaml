@@ -1,5 +1,5 @@
 {% set name = "cz-changeup" %}
-{% set version = "1.0.1" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/cz_changeup-{{ version }}.tar.gz
-  sha256: f69668b2ffbe5c051422804d9d467df46f5a7256b442afc505847f6cd354b845
+  sha256: 9faab33108bb0ef2a92dafe93ccc5ca5d9a77ff0a27821538a27c5a103d0d404
 
 build:
   noarch: python
