@@ -1,5 +1,6 @@
 {% set name = "cz-changeup" %}
-{% set version = "1.1.0" %}
+{% set version = "1.1.1" %}
+{% set python_min = "3.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/cz_changeup-{{ version }}.tar.gz
-  sha256: 9faab33108bb0ef2a92dafe93ccc5ca5d9a77ff0a27821538a27c5a103d0d404
+  sha256: c95565fbdc5bf288224f4ad57733f54e18156d18da943730c41ce961faa1d77d
 
 build:
   noarch: python
@@ -16,11 +17,11 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - hatchling
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - commitizen >=3.0.0,<4.0.0
 
 test:
@@ -29,6 +30,7 @@ test:
   commands:
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
